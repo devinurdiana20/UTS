@@ -1,21 +1,78 @@
-public class Vehicle {
-    private String maker;
-    private int kmperGallon;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package uts;
+
+/**
+ *
+ * @author lazar
+ */
+class Vehicle {
     
-    void Vehicle(String maker, int kmperGallon){
+    private String maker;
+    private int kmPerGallons;
+    
+    protected Vehicle(String maker, int kmPerGallons) {
         
+        this.maker = maker;
+        this.kmPerGallons = kmPerGallons;
     }
-    public void setmaker(String maker){
+    
+    protected void setMaker(String maker) {
+        
         this.maker = maker;
     }
-    public String getmaker(){
+    protected String getMaker() {
+        
         return this.maker;
-    }  
-    
-    public void setkmperGallon(int kmperGallon){
-        this.kmperGallon = kmperGallon;
     }
-    public int getkmperGallon(){
-        return this.kmperGallon;
-    }  
+    protected void setKmPerGallons(int kmPerGallons) {
+        
+        this.kmPerGallons = kmPerGallons;
+    }
+    protected int getKmPerGallons() {
+        
+        return this.kmPerGallons;
+    }
+    protected int bandingVehicle(int vehicle1, int vehicle2) {
+        
+        if(vehicle1 < vehicle2) {
+            
+            return 1;
+        }
+        else {
+            
+            return -1;
+        }
+    }
+    protected int getKmPerLiters() {
+        
+        int kmPerLiters = this.kmPerGallons * 3785;
+        return kmPerLiters;
+    }
+}
+
+class VehicleTest extends Vehicle {
+    
+    protected VehicleTest(String maker, int kmPerGallons) {
+        
+        super(maker, kmPerGallons);
+    }
+}
+public class MainVehicle {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        VehicleTest vehicle1 = new VehicleTest("Premium", 20);
+        VehicleTest vehicle2 = new VehicleTest("Pertamax", 10);
+        
+        System.out.println(vehicle1.getKmPerLiters());
+       
+    }
+    
 }
