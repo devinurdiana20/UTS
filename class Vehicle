@@ -1,13 +1,9 @@
-package soal1;
 public class Vehicle {
     private String maker;
     private int kmperGallon;
     
-    void Vehicle(String maker){
+    void Vehicle(String maker, int kmperGallon){
         
-    }
-    void Vehicle(int kmperGallon){
-    
     }
     public void setmaker(String maker){
         this.maker = maker;
